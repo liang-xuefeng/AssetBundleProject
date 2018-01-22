@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 4113200366
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2e4a3690e476787c69af17640b25d5cb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f0cd318817949120dc67cc78f16ec8b3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Res/Prefabs/Increase.prefab
+- Assets/Res/Prefabs/Cancel.prefab
+Dependencies:
+- E:/Work/Jobs/AssetBundleFrame/AssetBundleProject/Assets/StreamingAssets/Windows/tips.u3d

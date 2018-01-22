@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 479782275
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3d89bf6b337647cc984d707bf72c3e8b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4774d6da9b606debf00b5a5d61c4487c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Res/Tips/Reduce.png
+- Assets/Res/Tips/Last.png
+- Assets/Res/Tips/Increase.png
+- Assets/Res/Tips/Next.png
+- Assets/Res/Tips/Confirm.png
+- Assets/Res/Tips/Cancel.png
+- Assets/Res/Tips/Play.png
+Dependencies: []
