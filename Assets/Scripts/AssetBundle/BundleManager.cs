@@ -57,6 +57,29 @@ namespace Assets.Scripts.AssetBundle
         }
 
         /// <summary>
+        /// 删除资源
+        /// </summary>
+        private void _RemoveReource(string bundleName)
+        {
+            BundleElement resource = null;
+            if (BundleElements.TryGetValue(bundleName, out resource))
+            {
+                //1.删除目标依赖
+                string[] depends = resource.Dependencies;
+                if (depends != null)
+                {
+                    for (int index = 0; index < depends.Length; index++)
+                    {
+                        string dependPath = depends[index];
+                        UnLoadAsset(dependPath);
+                    }
+                }
+                //2.删除目标
+                UnLoadAsset(bundleName);
+            }
+        }
+
+        /// <summary>
         /// 同步加载bundle
         /// </summary>
         private AssetBundle LoadAssetBundleSync(string path)
@@ -89,6 +112,27 @@ namespace Assets.Scripts.AssetBundle
                 }
             }
             return resource;
+        }
+
+        private bool UnLoadAsset(string bundleName)
+        {
+            BundleElement resource = null;
+            if (BundleElements.TryGetValue(bundleName, out resource))
+            {
+                resource.RefCount--;
+                if (resource.RefCount <= 0)
+                {
+                    resource.UnLoad();
+                    if (resource.Bundle == null)
+                    {
+                        //Debug.LogError("释放成功了了");
+                        BundleElements.Remove(bundleName);
+                        resource = null;
+                    }
+                }
+                return true;
+            }
+            return false;
         }
     }
 }
